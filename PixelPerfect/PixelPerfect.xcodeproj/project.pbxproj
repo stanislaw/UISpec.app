@@ -12,6 +12,7 @@
 		86CE215C1A0E614D009654F9 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 86CE215B1A0E614D009654F9 /* Images.xcassets */; };
 		86CE215F1A0E614D009654F9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86CE215D1A0E614D009654F9 /* Main.storyboard */; };
 		86CE216B1A0E614E009654F9 /* PixelPerfectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE216A1A0E614E009654F9 /* PixelPerfectTests.swift */; };
+		86CE21771A0E68A0009654F9 /* ImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86CE21761A0E68A0009654F9 /* ImageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +35,7 @@
 		86CE21641A0E614E009654F9 /* PixelPerfectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PixelPerfectTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CE21691A0E614E009654F9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86CE216A1A0E614E009654F9 /* PixelPerfectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PixelPerfectTests.swift; sourceTree = "<group>"; };
+		86CE21761A0E68A0009654F9 /* ImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				86CE215B1A0E614D009654F9 /* Images.xcassets */,
 				86CE215D1A0E614D009654F9 /* Main.storyboard */,
 				86CE21551A0E614D009654F9 /* Supporting Files */,
+				86CE21761A0E68A0009654F9 /* ImageView.swift */,
 			);
 			path = PixelPerfect;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86CE21771A0E68A0009654F9 /* ImageView.swift in Sources */,
 				86CE215A1A0E614D009654F9 /* ViewController.swift in Sources */,
 				86CE21581A0E614D009654F9 /* AppDelegate.swift in Sources */,
 			);

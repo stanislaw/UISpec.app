@@ -8,6 +8,8 @@
 
 import Cocoa
 
+//import ImageView
+
 class ViewController: NSViewController {
 
     override func viewDidLoad() {
@@ -21,7 +23,5 @@ class ViewController: NSViewController {
         // Update the view, if already loaded.
         }
     }
-
-
 }
 
