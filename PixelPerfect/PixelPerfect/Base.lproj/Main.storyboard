@@ -672,11 +672,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xEI-gb-kCc">
-                                <rect key="frame" x="0.0" y="0.0" width="491" height="273"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xEI-gb-kCc">
+                                <rect key="frame" x="-3" y="-3" width="486" height="276"/>
                                 <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="EkK-hQ-pkh"/>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="xEI-gb-kCc" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="AJ2-vb-7EN"/>
+                            <constraint firstItem="xEI-gb-kCc" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="MtO-Va-jkK"/>
+                            <constraint firstItem="xEI-gb-kCc" firstAttribute="trailing" secondItem="m2S-Jp-Qdl" secondAttribute="trailing" id="bUe-c3-VNF"/>
+                            <constraint firstItem="xEI-gb-kCc" firstAttribute="bottom" secondItem="m2S-Jp-Qdl" secondAttribute="bottom" id="kFd-zh-9fr"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
