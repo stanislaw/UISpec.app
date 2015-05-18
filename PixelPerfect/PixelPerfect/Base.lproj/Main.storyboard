@@ -672,11 +672,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-7u-H60">
-                                <rect key="frame" x="32" y="17" width="431" height="236"/>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-7u-H60" customClass="ImageView" customModule="PixelPerfect">
+                                <rect key="frame" x="-3" y="-3" width="486" height="276"/>
                                 <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" imageFrameStyle="grayBezel" id="r5J-pS-MxT"/>
                             </imageView>
                         </subviews>
+                        <constraints>
+                            <constraint firstItem="Uum-7u-H60" firstAttribute="trailing" secondItem="m2S-Jp-Qdl" secondAttribute="trailing" id="YdF-0F-Wdk"/>
+                            <constraint firstItem="Uum-7u-H60" firstAttribute="bottom" secondItem="m2S-Jp-Qdl" secondAttribute="bottom" id="pZT-Ez-0on"/>
+                            <constraint firstItem="Uum-7u-H60" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" id="teI-Ma-Hih"/>
+                            <constraint firstItem="Uum-7u-H60" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="xUg-U4-VfX"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="Uum-7u-H60" id="4Bd-kw-PXA"/>
