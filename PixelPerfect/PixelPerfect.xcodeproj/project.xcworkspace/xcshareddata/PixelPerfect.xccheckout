@@ -5,16 +5,20 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>FB548DCE-7AA1-4A18-80A2-AC64316B4343</string>
+	<string>638DF1A1-1B1F-4FD7-831D-9C1C7C8A7B4B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PixelPerfect</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>3D36D5867E2ADDE8AD260359E339E38D358844C8</key>
 		<string>bitbucket.org:stanisla/pixelperfect.git</string>
 	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PixelPerfect/PixelPerfect.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>3D36D5867E2ADDE8AD260359E339E38D358844C8</key>
-		<string>PixelPerfect/</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>bitbucket.org:stanisla/pixelperfect.git</string>
