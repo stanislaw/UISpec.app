@@ -8,14 +8,20 @@
 
 import Cocoa
 
-class ViewController: NSViewController {
+class ViewController: NSViewController, ImageViewDelegate {
 
     @IBOutlet weak var imageView: ImageView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        imageView.delegate = self
+
+        println(view.frame)
+        println(view.window)
         println(imageView)
+        println("original image dimensions: \(imageView.frame)")
+
     }
 
     override var representedObject: AnyObject? {
@@ -24,6 +30,38 @@ class ViewController: NSViewController {
         }
     }
 
+    func imageViewReceivedImage(imageView: ImageView) {
+        println("olaala \(imageView)")
 
+        if let rep: AnyObject = imageView.image?.representations.first {
+            let concreteRep: NSImageRep = rep as! NSImageRep
+
+            println("real size \(concreteRep.size)")
+            println("real size \(concreteRep.pixelsHigh)")
+            println("real size \(concreteRep.pixelsWide)")
+
+            let window: NSWindow = view.window!
+
+            println("window \(window)")
+
+            let mainScreen: NSScreen = NSScreen.mainScreen()!
+            println(mainScreen.deviceDescription)
+
+            let screenSize: NSSize = mainScreen.deviceDescription[NSDeviceSize]!.sizeValue
+            println()
+            println(screenSize)
+            println()
+
+            let windowWidth:  CGFloat = CGFloat(concreteRep.pixelsWide)
+            let windowHeight: CGFloat = CGFloat(concreteRep.pixelsHigh)
+
+            let windowX: CGFloat = window.frame.origin.x
+            let windowY: CGFloat = window.frame.origin.y
+            
+            window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
+
+            println("result image dimensions: \(imageView.frame)")
+        }
+    }
 }
 

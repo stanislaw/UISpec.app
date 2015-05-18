@@ -8,14 +8,19 @@
 
 import Cocoa
 
+protocol ImageViewDelegate: class {
+    func imageViewReceivedImage(imageView: ImageView)
+}
+
 class ImageView: NSImageView, NSDraggingDestination {
+
+    weak var delegate: ImageViewDelegate?
 
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
 
         registerForDraggedTypes(NSImage.imageTypes())
-
-        println(self.registeredDraggedTypes)
+        //println(self.registeredDraggedTypes)
     }
 
     override func draggingEnded(sender: NSDraggingInfo?) {
@@ -33,7 +38,7 @@ class ImageView: NSImageView, NSDraggingDestination {
             println("real size \(concreteRep.pixelsHigh)")
             println("real size \(concreteRep.pixelsWide)")
 
-            
+            delegate?.imageViewReceivedImage(self)
         }
     }
 }
