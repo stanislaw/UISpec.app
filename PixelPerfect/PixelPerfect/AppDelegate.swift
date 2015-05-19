@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         println(mainScreen.deviceDescription)
 
         let screenSize: NSSize = mainScreen.deviceDescription[NSDeviceSize]!.sizeValue
-        println()
+
         println(screenSize)
         println()
 
@@ -31,24 +31,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let windowX: CGFloat = (screenSize.width  - windowWidth)  / 2
         let windowY: CGFloat = (screenSize.height - windowHeight) / 2
 
-        window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
-
-
-        ////
-
         NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
-            println("olalala \(event)")
-
+            // Q
             if event.keyCode == 12 {
-                if window.alphaValue == 0.5 {
-                    window.alphaValue = 1
+                if window.alphaValue == 1 {
+                    window.alphaValue = 0.75
+                }
+
+                else if window.alphaValue == 0.75 {
+                    window.alphaValue = 0.5
+                }
+
+                else if window.alphaValue == 0.5 {
+                    window.alphaValue = 0.25
                 }
 
                 else {
-                    window.alphaValue = 0.5
+                    window.alphaValue = 1
                 }
             }
 
+            // <-
             else if event.keyCode == 123 {
                 var windowFrame: CGRect = window.frame
 
@@ -57,6 +60,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 window.setFrame(windowFrame, display: true)
             }
 
+            // ->
             else if event.keyCode == 124 {
                 var windowFrame: CGRect = window.frame
 
@@ -65,6 +69,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 window.setFrame(windowFrame, display: true)
             }
 
+            // DOWN
             else if event.keyCode == 125 {
                 var windowFrame: CGRect = window.frame
 
@@ -73,12 +78,23 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 window.setFrame(windowFrame, display: true)
             }
 
+            // UP
             else if event.keyCode == 126 {
                 var windowFrame: CGRect = window.frame
 
                 windowFrame.origin.y += CGFloat(1)
 
                 window.setFrame(windowFrame, display: true)
+            }
+
+            // F3
+            else if event.keyCode == 99 {
+                println("F3")
+                NSApplication.sharedApplication().hide(nil)
+            }
+
+            else {
+                println("olalala \(event)")
             }
 
             return event
