@@ -13,23 +13,29 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
 
-        let mainScreen: NSScreen = NSScreen.mainScreen()!
-        println(mainScreen.deviceDescription)
+        //assert(false, "")
 
-        let screenSize: NSSize = mainScreen.deviceDescription[NSDeviceSize]!.sizeValue
+        println("WTF1 \(PPApp.sharedApp)")
+        
+        PPApp.sharedApp.setup(NSApp as! NSApplication)
 
-        println(screenSize)
-        println()
-
+//        let mainScreen: NSScreen = NSScreen.mainScreen()!
+//        println(mainScreen.deviceDescription)
+//
+//        let screenSize: NSSize = mainScreen.deviceDescription[NSDeviceSize]!.sizeValue
+//
+//        println(screenSize)
+//        println()
+//
         let window: NSWindow = NSApplication.sharedApplication().windows.first as! NSWindow
-
-        window.level = Int(CGWindowLevelForKey(Int32(kCGFloatingWindowLevelKey)))
-
-        let windowWidth: CGFloat  = 200
-        let windowHeight: CGFloat = 200
-
-        let windowX: CGFloat = (screenSize.width  - windowWidth)  / 2
-        let windowY: CGFloat = (screenSize.height - windowHeight) / 2
+//
+//        window.level = Int(CGWindowLevelForKey(Int32(kCGFloatingWindowLevelKey)))
+//
+//        let windowWidth: CGFloat  = 200
+//        let windowHeight: CGFloat = 200
+//
+//        let windowX: CGFloat = (screenSize.width  - windowWidth)  / 2
+//        let windowY: CGFloat = (screenSize.height - windowHeight) / 2
 
         NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
             // Q
@@ -51,7 +57,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 }
             }
 
-            // <-
+            // LEFT
             else if event.keyCode == 123 {
                 var windowFrame: CGRect = window.frame
 
@@ -64,7 +70,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 window.setFrame(windowFrame, display: true)
             }
 
-            // ->
+            // RIGHT
             else if event.keyCode == 124 {
                 var windowFrame: CGRect = window.frame
 
@@ -135,12 +141,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             return event
         })
     }
-
-    func applicationWillTerminate(aNotification: NSNotification) {
-        // Insert code here to tear down your application
-    }
-
-
 }
 
 extension NSEventModifierFlags {

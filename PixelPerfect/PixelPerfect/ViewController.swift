@@ -24,12 +24,6 @@ class ViewController: NSViewController, ImageViewDelegate {
 
     }
 
-    override var representedObject: AnyObject? {
-        didSet {
-        // Update the view, if already loaded.
-        }
-    }
-
     func imageViewReceivedImage(imageView: ImageView) {
         println("olaala \(imageView)")
 
