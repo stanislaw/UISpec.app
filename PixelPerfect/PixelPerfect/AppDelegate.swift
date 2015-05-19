@@ -55,7 +55,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             else if event.keyCode == 123 {
                 var windowFrame: CGRect = window.frame
 
-                windowFrame.origin.x -= CGFloat(1)
+                if event.modifierFlags.isShiftKey() {
+                    windowFrame.origin.x -= CGFloat(10)
+                } else {
+                    windowFrame.origin.x -= CGFloat(1)
+                }
 
                 window.setFrame(windowFrame, display: true)
             }
@@ -64,7 +68,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             else if event.keyCode == 124 {
                 var windowFrame: CGRect = window.frame
 
-                windowFrame.origin.x += CGFloat(1)
+                if event.modifierFlags.isShiftKey() {
+                    windowFrame.origin.x += CGFloat(10)
+                } else {
+                    windowFrame.origin.x += CGFloat(1)
+                }
 
                 window.setFrame(windowFrame, display: true)
             }
@@ -73,7 +81,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             else if event.keyCode == 125 {
                 var windowFrame: CGRect = window.frame
 
-                windowFrame.origin.y -= CGFloat(1)
+                if event.modifierFlags.isShiftKey() {
+                    windowFrame.origin.y -= CGFloat(10)
+                } else {
+                    windowFrame.origin.y -= CGFloat(1)
+                }
 
                 window.setFrame(windowFrame, display: true)
             }
@@ -82,7 +94,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             else if event.keyCode == 126 {
                 var windowFrame: CGRect = window.frame
 
-                windowFrame.origin.y += CGFloat(1)
+                if event.modifierFlags.isShiftKey() {
+                    windowFrame.origin.y += CGFloat(10)
+                } else {
+                    windowFrame.origin.y += CGFloat(1)
+                }
 
                 window.setFrame(windowFrame, display: true)
             }
@@ -130,6 +146,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 extension NSEventModifierFlags {
     func isCommandKey() -> Bool {
         return isSet(.CommandKeyMask)
+    }
+
+    func isShiftKey() -> Bool {
+        return isSet(.ShiftKeyMask)
     }
 
     func isSet(bit: NSEventModifierFlags) -> Bool {
