@@ -93,6 +93,25 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 NSApplication.sharedApplication().hide(nil)
             }
 
+            // 1
+            else if event.keyCode == 18 {
+                println("1 \(event)")
+
+                if event.modifierFlags.isCommandKey() {
+                    println("modifier")
+                }
+            }
+
+            // 2
+            else if event.keyCode == 19 {
+                println("2 \(event)")
+            }
+
+            // 3
+            else if event.keyCode == 20 {
+                println("3 \(event)")
+            }
+
             else {
                 println("olalala \(event)")
             }
@@ -108,3 +127,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 }
 
+extension NSEventModifierFlags {
+    func isCommandKey() -> Bool {
+        return isSet(.CommandKeyMask)
+    }
+
+    func isSet(bit: NSEventModifierFlags) -> Bool {
+        return self & bit == bit
+    }
+
+    func isNotSet(bit: NSEventModifierFlags) -> Bool {
+        return !isSet(bit)
+    }
+}
