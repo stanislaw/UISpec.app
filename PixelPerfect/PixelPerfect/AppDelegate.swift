@@ -23,7 +23,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         let window: NSWindow = NSApplication.sharedApplication().windows.first as! NSWindow
 
-//        window.sho = false
+        window.level = Int(CGWindowLevelForKey(Int32(kCGFloatingWindowLevelKey)))
 
         let windowWidth: CGFloat  = 200
         let windowHeight: CGFloat = 200
@@ -32,6 +32,57 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let windowY: CGFloat = (screenSize.height - windowHeight) / 2
 
         window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
+
+
+        ////
+
+        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
+            println("olalala \(event)")
+
+            if event.keyCode == 12 {
+                if window.alphaValue == 0.5 {
+                    window.alphaValue = 1
+                }
+
+                else {
+                    window.alphaValue = 0.5
+                }
+            }
+
+            else if event.keyCode == 123 {
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.x -= CGFloat(1)
+
+                window.setFrame(windowFrame, display: true)
+            }
+
+            else if event.keyCode == 124 {
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.x += CGFloat(1)
+
+                window.setFrame(windowFrame, display: true)
+            }
+
+            else if event.keyCode == 125 {
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.y -= CGFloat(1)
+
+                window.setFrame(windowFrame, display: true)
+            }
+
+            else if event.keyCode == 126 {
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.y += CGFloat(1)
+
+                window.setFrame(windowFrame, display: true)
+            }
+
+            return event
+        })
     }
 
     func applicationWillTerminate(aNotification: NSNotification) {
