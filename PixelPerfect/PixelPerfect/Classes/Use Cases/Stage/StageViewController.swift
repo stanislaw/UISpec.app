@@ -17,11 +17,6 @@ public class StageViewController: NSViewController, ImageViewDelegate {
         super.viewDidLoad()
 
         imageView.delegate = self
-
-        println(view.frame)
-        println(view.window)
-        println(imageView)
-        println("original image dimensions: \(imageView.frame)")
     }
 
     // MARK: - Public API
@@ -33,21 +28,10 @@ public class StageViewController: NSViewController, ImageViewDelegate {
     // MARK: -
 
     func imageViewReceivedImage(imageView: ImageView) {
-        println("olaala \(imageView)")
-
         let calculator = ImageViewDimensionsCalculator()
 
         if let imageDimensions = calculator.dimensions(imageView) {
-            let window: NSWindow = view.window!
-
-            let windowWidth  = imageDimensions.width
-            let windowHeight = imageDimensions.height
-
-            let windowX: CGFloat = window.frame.origin.x
-            let windowY: CGFloat = window.frame.origin.y
-
-            window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
+            useCase.appReceivedNewImage(imageDimensions)
         }
     }
 }
-

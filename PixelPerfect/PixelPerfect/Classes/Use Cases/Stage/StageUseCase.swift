@@ -68,7 +68,7 @@ public class StageUseCaseSetup {
     }
 }
 
-public class StageUseCase: NSObject {
+public class StageUseCase {
     public private(set) var viewController: StageViewController!
     public private(set) var windowController: NSWindowController!
 
@@ -79,5 +79,17 @@ public class StageUseCase: NSObject {
     init(windowController: NSWindowController, viewController: StageViewController) {
         self.windowController = windowController
         self.viewController   = viewController
+
+        viewController.configure(self)
+    }
+
+    func appReceivedNewImage(newImageDimensions: CGSize) {
+        let windowWidth  = newImageDimensions.width
+        let windowHeight = newImageDimensions.height
+
+        let windowX: CGFloat = window.frame.origin.x
+        let windowY: CGFloat = window.frame.origin.y
+
+        window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
     }
 }
