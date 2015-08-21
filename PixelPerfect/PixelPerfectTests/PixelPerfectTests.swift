@@ -38,7 +38,7 @@ class PixelPerfectTests: XCTestCase {
     }
     
     func testSetup() {
-        let app: PPApp = PPApp()
+        let app: App = App()
 
         app.setup(NSApp as! NSApplication)
 
@@ -46,7 +46,7 @@ class PixelPerfectTests: XCTestCase {
     }
 
     func testLeftArrowKeyPressedEvent() {
-        let app: PPApp = PPApp.sharedApp
+        let app: App = PP
 
         let expectation = expectationWithDescription("Description")
 
@@ -61,7 +61,7 @@ class PixelPerfectTests: XCTestCase {
         NSRunLoop.currentRunLoop().runUntilDate(NSDate(timeIntervalSinceNow: 1))
 
         println("olalala \(NSApp)")
-        println("olalala \(PPApp.sharedApp.nsApp)")
+        println("olalala \(PP.nsApp)")
 
         println("olalala \(app.nsApp.windows)")
 

@@ -12,7 +12,7 @@ import Cocoa
 class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillFinishLaunching(notification: NSNotification) {
-        PPApp.sharedApp.setup(NSApp as! NSApplication)
+        PP.setup(NSApp as! NSApplication)
         //assert(false, "")
     }
 
@@ -20,7 +20,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         //assert(false, "")
 
-        println("WTF1 \(PPApp.sharedApp)")
+        println("WTF1 \(PP)")
         
 
 
@@ -153,12 +153,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         println("application did finish launching")
 
 
-        let app: PPApp = PPApp.sharedApp
-
         println("olalala1 \(NSApp)")
-        println("olalala2 \(PPApp.sharedApp.nsApp)")
+        println("olalala2 \(PP.nsApp)")
 
-        println("olalala \(app.nsApp.windows)")
+        println("olalala \(PP.nsApp.windows)")
 
         println("olalala \(window)")
 

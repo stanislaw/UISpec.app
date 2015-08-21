@@ -8,6 +8,6 @@
 
 import Cocoa
 
-class PPAppInterfaceAdapter: NSObject {
+class AppInterfaceAdapter: NSObject {
 
 }

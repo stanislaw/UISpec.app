@@ -8,17 +8,13 @@
 
 import Cocoa
 
-public class PPApp: NSObject {
+public let PP = App()
+
+public class App: NSObject {
 
     public private(set) var nsApp: NSApplication!
 
     public func setup(_nsApp: NSApplication!) {
-        assert(_nsApp != nil, "")
-
-        println(nsApp)
         nsApp = _nsApp
-        println(nsApp)
     }
-
-    public static let sharedApp = PPApp()
 }
