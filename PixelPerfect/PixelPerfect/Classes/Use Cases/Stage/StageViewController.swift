@@ -8,11 +8,10 @@
 
 import Cocoa
 
-class ViewController: NSViewController, ImageViewDelegate {
-
+public class StageViewController: NSViewController, ImageViewDelegate {
     @IBOutlet weak var imageView: ImageView!
 
-    override func viewDidLoad() {
+    override public func viewDidLoad() {
         super.viewDidLoad()
 
         imageView.delegate = self
@@ -23,7 +22,7 @@ class ViewController: NSViewController, ImageViewDelegate {
         println("original image dimensions: \(imageView.frame)")
     }
 
-    override func viewDidAppear() {
+    override public func viewDidAppear() {
     }
 
     func imageViewReceivedImage(imageView: ImageView) {

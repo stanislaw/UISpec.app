@@ -16,6 +16,9 @@
 		86FCB7E31B87B1E30035F7EB /* StageUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7E01B87B1E30035F7EB /* StageUseCase.swift */; };
 		86FCB7E41B87B1E30035F7EB /* StageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7E11B87B1E30035F7EB /* StageViewController.swift */; };
 		86FCB7E61B87B60D0035F7EB /* Stage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 86FCB7E51B87B60D0035F7EB /* Stage.storyboard */; };
+		86FCB7E81B87BC820035F7EB /* UserEventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7E71B87BC820035F7EB /* UserEventSource.swift */; };
+		86FCB7EA1B87BDF30035F7EB /* StageWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7E91B87BDF30035F7EB /* StageWindow.swift */; };
+		86FCB7EC1B87BE8A0035F7EB /* Construction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7EB1B87BE8A0035F7EB /* Construction.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +45,9 @@
 		86FCB7E01B87B1E30035F7EB /* StageUseCase.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageUseCase.swift; sourceTree = "<group>"; };
 		86FCB7E11B87B1E30035F7EB /* StageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageViewController.swift; sourceTree = "<group>"; };
 		86FCB7E51B87B60D0035F7EB /* Stage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Stage.storyboard; sourceTree = "<group>"; };
+		86FCB7E71B87BC820035F7EB /* UserEventSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEventSource.swift; sourceTree = "<group>"; };
+		86FCB7E91B87BDF30035F7EB /* StageWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageWindow.swift; sourceTree = "<group>"; };
+		86FCB7EB1B87BE8A0035F7EB /* Construction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Construction.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +119,7 @@
 				86FCB7D41B87AFD00035F7EB /* System */,
 				86FCB7C01B87ACB80035F7EB /* AppDelegate.swift */,
 				86FCB7C21B87ACB80035F7EB /* App.swift */,
+				86FCB7EB1B87BE8A0035F7EB /* Construction.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -130,6 +137,7 @@
 			isa = PBXGroup;
 			children = (
 				86FCB7D51B87AFD00035F7EB /* Mac.swift */,
+				86FCB7E71B87BC820035F7EB /* UserEventSource.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -149,6 +157,7 @@
 				86FCB7DF1B87B1E30035F7EB /* ImageView.swift */,
 				86FCB7E01B87B1E30035F7EB /* StageUseCase.swift */,
 				86FCB7E11B87B1E30035F7EB /* StageViewController.swift */,
+				86FCB7E91B87BDF30035F7EB /* StageWindow.swift */,
 			);
 			path = Stage;
 			sourceTree = "<group>";
@@ -252,12 +261,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86FCB7EA1B87BDF30035F7EB /* StageWindow.swift in Sources */,
 				86FCB7E31B87B1E30035F7EB /* StageUseCase.swift in Sources */,
 				86FCB7E21B87B1E30035F7EB /* ImageView.swift in Sources */,
 				86FCB7D61B87AFD00035F7EB /* Mac.swift in Sources */,
 				86FCB7E41B87B1E30035F7EB /* StageViewController.swift in Sources */,
+				86FCB7E81B87BC820035F7EB /* UserEventSource.swift in Sources */,
 				86FCB7CC1B87ACB80035F7EB /* App.swift in Sources */,
 				86FCB7CA1B87ACB80035F7EB /* AppDelegate.swift in Sources */,
+				86FCB7EC1B87BE8A0035F7EB /* Construction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

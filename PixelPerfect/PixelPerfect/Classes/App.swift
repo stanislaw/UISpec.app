@@ -14,9 +14,13 @@ public class App: NSObject {
 
     public private(set) var nsApp: NSApplication!
 
+    public var stage: StageUseCase!
+
+    let construction = Construction()
+
     public func setup(_nsApp: NSApplication!) {
         nsApp = _nsApp
 
-
+        StageUseCaseSetup(app: self).execute()
     }
 }
