@@ -20,7 +20,6 @@ class ImageView: NSImageView, NSDraggingDestination {
         super.init(coder: aDecoder)
 
         registerForDraggedTypes(NSImage.imageTypes())
-        //println(self.registeredDraggedTypes)
     }
 
     override func draggingEnded(sender: NSDraggingInfo?) {

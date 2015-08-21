@@ -27,7 +27,7 @@
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2015 Stanislaw Pankevich. All rights reserved.</string>
 	<key>NSMainStoryboardFile</key>
-	<string>Main</string>
+	<string>Stage</string>
 	<key>NSPrincipalClass</key>
 	<string>NSApplication</string>
 </dict>

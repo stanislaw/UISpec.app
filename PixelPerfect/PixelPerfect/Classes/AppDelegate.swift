@@ -13,34 +13,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     func applicationWillFinishLaunching(notification: NSNotification) {
         PP.setup(NSApp as! NSApplication)
-        //assert(false, "")
     }
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-
-        //assert(false, "")
-
-        println("WTF1 \(PP)")
-        
-
-
-//        let mainScreen: NSScreen = NSScreen.mainScreen()!
-//        println(mainScreen.deviceDescription)
-//
-//        let screenSize: NSSize = mainScreen.deviceDescription[NSDeviceSize]!.sizeValue
-//
-//        println(screenSize)
-//        println()
-//
         let window: NSWindow = NSApplication.sharedApplication().windows.first as! NSWindow
-//
-//        window.level = Int(CGWindowLevelForKey(Int32(kCGFloatingWindowLevelKey)))
-//
-//        let windowWidth: CGFloat  = 200
-//        let windowHeight: CGFloat = 200
-//
-//        let windowX: CGFloat = (screenSize.width  - windowWidth)  / 2
-//        let windowY: CGFloat = (screenSize.height - windowHeight) / 2
 
         NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
             println(event.keyCode)
@@ -151,26 +127,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         })
 
         println("application did finish launching")
-
-
-        println("olalala1 \(NSApp)")
-        println("olalala2 \(PP.nsApp)")
-
-        println("olalala \(PP.nsApp.windows)")
-
-        println("olalala \(window)")
-
-        let source = CGEventSourceCreate(CGEventSourceStateID(kCGEventSourceStateHIDSystemState)).takeRetainedValue()
-
-        var cgEvent = CGEventCreateKeyboardEvent(source, 0x7B, true).takeRetainedValue()
-
-        let loc = CGEventTapLocation(kCGHIDEventTap)
-        
-        CGEventPost(loc, cgEvent)
-
     }
-
-
 }
 
 extension NSEventModifierFlags {

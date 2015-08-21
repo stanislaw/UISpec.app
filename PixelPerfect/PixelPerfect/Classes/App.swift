@@ -16,5 +16,7 @@ public class App: NSObject {
 
     public func setup(_nsApp: NSApplication!) {
         nsApp = _nsApp
+
+
     }
 }

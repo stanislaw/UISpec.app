@@ -40,14 +40,6 @@ class ViewController: NSViewController, ImageViewDelegate {
 
             println("window \(window)")
 
-            let mainScreen: NSScreen = NSScreen.mainScreen()!
-            println(mainScreen.deviceDescription)
-
-            let screenSize: NSSize = mainScreen.deviceDescription[NSDeviceSize]!.sizeValue
-            println()
-            println(screenSize)
-            println()
-
             let windowWidth:  CGFloat = CGFloat(concreteRep.pixelsWide)
             let windowHeight: CGFloat = CGFloat(concreteRep.pixelsHigh)
 
