@@ -11,6 +11,8 @@ import Cocoa
 public class StageViewController: NSViewController, ImageViewDelegate {
     @IBOutlet weak var imageView: ImageView!
 
+    public private(set) weak var useCase: StageUseCase!
+
     override public func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,32 +24,29 @@ public class StageViewController: NSViewController, ImageViewDelegate {
         println("original image dimensions: \(imageView.frame)")
     }
 
-    override public func viewDidAppear() {
+    // MARK: - Public API
+
+    func configure(useCase: StageUseCase) {
+        self.useCase = useCase
     }
+
+    // MARK: -
 
     func imageViewReceivedImage(imageView: ImageView) {
         println("olaala \(imageView)")
 
-        if let rep: AnyObject = imageView.image?.representations.first {
-            let concreteRep: NSImageRep = rep as! NSImageRep
+        let calculator = ImageViewDimensionsCalculator()
 
-            println("real size \(concreteRep.size)")
-            println("real size \(concreteRep.pixelsHigh)")
-            println("real size \(concreteRep.pixelsWide)")
-
+        if let imageDimensions = calculator.dimensions(imageView) {
             let window: NSWindow = view.window!
 
-            println("window \(window)")
-
-            let windowWidth:  CGFloat = CGFloat(concreteRep.pixelsWide)
-            let windowHeight: CGFloat = CGFloat(concreteRep.pixelsHigh)
+            let windowWidth  = imageDimensions.width
+            let windowHeight = imageDimensions.height
 
             let windowX: CGFloat = window.frame.origin.x
             let windowY: CGFloat = window.frame.origin.y
-            
-            window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
 
-            println("result image dimensions: \(imageView.frame)")
+            window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
         }
     }
 }

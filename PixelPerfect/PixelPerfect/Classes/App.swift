@@ -17,10 +17,13 @@ public class App: NSObject {
     public var stage: StageUseCase!
 
     let construction = Construction()
+    var userEventSource: UserEventSource!
 
     public func setup(_nsApp: NSApplication!) {
         nsApp = _nsApp
 
         StageUseCaseSetup(app: self).execute()
+
+        userEventSource = UserEventSource()
     }
 }

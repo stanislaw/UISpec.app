@@ -19,6 +19,7 @@
 		86FCB7E81B87BC820035F7EB /* UserEventSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7E71B87BC820035F7EB /* UserEventSource.swift */; };
 		86FCB7EA1B87BDF30035F7EB /* StageWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7E91B87BDF30035F7EB /* StageWindow.swift */; };
 		86FCB7EC1B87BE8A0035F7EB /* Construction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7EB1B87BE8A0035F7EB /* Construction.swift */; };
+		86FCB7EE1B87C2E00035F7EB /* ImageViewDimensionsCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86FCB7ED1B87C2E00035F7EB /* ImageViewDimensionsCalculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		86FCB7E71B87BC820035F7EB /* UserEventSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEventSource.swift; sourceTree = "<group>"; };
 		86FCB7E91B87BDF30035F7EB /* StageWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StageWindow.swift; sourceTree = "<group>"; };
 		86FCB7EB1B87BE8A0035F7EB /* Construction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Construction.swift; sourceTree = "<group>"; };
+		86FCB7ED1B87C2E00035F7EB /* ImageViewDimensionsCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageViewDimensionsCalculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,6 +140,7 @@
 			children = (
 				86FCB7D51B87AFD00035F7EB /* Mac.swift */,
 				86FCB7E71B87BC820035F7EB /* UserEventSource.swift */,
+				86FCB7ED1B87C2E00035F7EB /* ImageViewDimensionsCalculator.swift */,
 			);
 			path = System;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 				86FCB7E21B87B1E30035F7EB /* ImageView.swift in Sources */,
 				86FCB7D61B87AFD00035F7EB /* Mac.swift in Sources */,
 				86FCB7E41B87B1E30035F7EB /* StageViewController.swift in Sources */,
+				86FCB7EE1B87C2E00035F7EB /* ImageViewDimensionsCalculator.swift in Sources */,
 				86FCB7E81B87BC820035F7EB /* UserEventSource.swift in Sources */,
 				86FCB7CC1B87ACB80035F7EB /* App.swift in Sources */,
 				86FCB7CA1B87ACB80035F7EB /* AppDelegate.swift in Sources */,
