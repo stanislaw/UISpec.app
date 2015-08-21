@@ -9,9 +9,10 @@
 import Cocoa
 
 public class PPApp: NSObject {
-    public var nsApp: NSApplication!
 
-    func setup(_nsApp: NSApplication!) {
+    public private(set) var nsApp: NSApplication!
+
+    public func setup(_nsApp: NSApplication!) {
         assert(_nsApp != nil, "")
 
         println(nsApp)

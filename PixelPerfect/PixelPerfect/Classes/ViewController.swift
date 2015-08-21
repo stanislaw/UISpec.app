@@ -21,7 +21,9 @@ class ViewController: NSViewController, ImageViewDelegate {
         println(view.window)
         println(imageView)
         println("original image dimensions: \(imageView.frame)")
+    }
 
+    override func viewDidAppear() {
     }
 
     func imageViewReceivedImage(imageView: ImageView) {
