@@ -117,3 +117,21 @@ class UserEventSource {
 
     }
 }
+
+extension NSEventModifierFlags {
+    func isCommandKey() -> Bool {
+        return isSet(.CommandKeyMask)
+    }
+
+    func isShiftKey() -> Bool {
+        return isSet(.ShiftKeyMask)
+    }
+
+    func isSet(bit: NSEventModifierFlags) -> Bool {
+        return self & bit == bit
+    }
+
+    func isNotSet(bit: NSEventModifierFlags) -> Bool {
+        return !isSet(bit)
+    }
+}

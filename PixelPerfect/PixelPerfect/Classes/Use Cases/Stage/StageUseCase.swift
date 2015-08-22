@@ -83,6 +83,8 @@ public class StageUseCase: UserEventObserver {
         viewController.configure(self)
     }
 
+    // MARK - Events
+
     func appReceivedNewImage(newImageDimensions: CGSize) {
         window.setFrameForNewImage(newImageDimensions)
     }

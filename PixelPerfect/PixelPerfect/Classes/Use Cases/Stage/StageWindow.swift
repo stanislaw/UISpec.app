@@ -8,14 +8,13 @@
 
 import Cocoa
 
-enum StageWindowZoom {
-    case Zoom_100
-    case Zoom_75
-    case Zoom_50
-    case Zoom_25
-}
-
 class StageWindow: NSWindow {
+    enum Zoom {
+        case Zoom_100
+        case Zoom_75
+        case Zoom_50
+        case Zoom_25
+    }
 
     required init?(coder: NSCoder) {
         zoom = .Zoom_100
@@ -42,7 +41,7 @@ class StageWindow: NSWindow {
     // MARK: -
 
     var currentImageDimensions: CGSize?
-    var zoom: StageWindowZoom
+    var zoom: Zoom
 
     func setFrameForNewImage(newImageDimensions: CGSize) {
         let windowWidth  = newImageDimensions.width
@@ -57,7 +56,7 @@ class StageWindow: NSWindow {
         zoom = .Zoom_100
     }
 
-    func setZoom(newZoom: StageWindowZoom) {
+    func setZoom(newZoom: StageWindow.Zoom) {
         if newZoom == zoom { return }
 
         var windowFrame: CGRect = frame

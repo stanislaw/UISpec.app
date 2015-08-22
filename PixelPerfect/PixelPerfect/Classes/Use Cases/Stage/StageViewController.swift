@@ -25,7 +25,7 @@ public class StageViewController: NSViewController, ImageViewDelegate {
         self.useCase = useCase
     }
 
-    // MARK: -
+    // MARK: - <ImageViewDelegate>
 
     func imageViewReceivedImage(imageView: ImageView) {
         let calculator = ImageViewDimensionsCalculator()
