@@ -72,8 +72,8 @@ public class StageUseCase: UserEventObserver {
     public private(set) var viewController: StageViewController!
     public private(set) var windowController: NSWindowController!
 
-    public var window: NSWindow! {
-        return windowController.window!
+    var window: StageWindow! {
+        return windowController.window as! StageWindow
     }
 
     init(windowController: NSWindowController, viewController: StageViewController) {
@@ -84,17 +84,7 @@ public class StageUseCase: UserEventObserver {
     }
 
     func appReceivedNewImage(newImageDimensions: CGSize) {
-        let windowWidth  = newImageDimensions.width
-        let windowHeight = newImageDimensions.height
-
-        println("newImage dimensions \(newImageDimensions)")
-
-        let windowX: CGFloat = window.frame.origin.x
-        let windowY: CGFloat = window.frame.origin.y
-
-        window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
-
-        println("new window frame \(window.frame)")
+        window.setFrameForNewImage(newImageDimensions)
     }
 
     func userEventSourceDidReceiveEvent(event: UserEvent) {
@@ -173,17 +163,17 @@ public class StageUseCase: UserEventObserver {
                 }
 
             // ⌘ + "1", ⌘ + 2, ⌘ + 3
-            case .Key_Command_1: (
+            case .Key_Command_1:
+                window.setZoom(.Zoom_100)
 
-            )
+            case .Key_Command_2:
+                window.setZoom(.Zoom_75)
 
-            case .Key_Command_2: (
+            case .Key_Command_3:
+                window.setZoom(.Zoom_50)
 
-            )
-
-            case .Key_Command_3: (
-
-            )
+            case .Key_Command_4:
+                window.setZoom(.Zoom_25)
 
             default:
                 ()

@@ -21,10 +21,14 @@ enum UserEvent {
     case Key_Right
     case Key_Shift_Right
 
+    // Opacity
     case Key_Q
+
+    // Zoom: 100/75/50/25
     case Key_Command_1
     case Key_Command_2
     case Key_Command_3
+    case Key_Command_4
 }
 
 protocol UserEventObserver {
@@ -88,6 +92,11 @@ class UserEventSource {
                 case 20:
                     if event.modifierFlags.isCommandKey() {
                         userEvent = .Key_Command_3
+                    }
+
+                case 21:
+                    if event.modifierFlags.isCommandKey() {
+                        userEvent = .Key_Command_4
                     }
 
                 // F3 (Temporary)
