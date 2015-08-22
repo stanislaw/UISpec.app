@@ -10,6 +10,12 @@ import Cocoa
 
 class StageWindow: NSWindow {
 
+    override func awakeFromNib() {
+        super.awakeFromNib()
+
+        movableByWindowBackground = true
+    }
+
     override var canBecomeMainWindow: Bool {
         return true
     }
