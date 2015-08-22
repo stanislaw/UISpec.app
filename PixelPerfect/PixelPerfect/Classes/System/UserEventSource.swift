@@ -8,116 +8,101 @@
 
 import Cocoa
 
+enum UserEvent {
+    case Key_Up
+    case Key_Shift_Up
+
+    case Key_Down
+    case Key_Shift_Down
+
+    case Key_Left
+    case Key_Shift_Left
+
+    case Key_Right
+    case Key_Shift_Right
+
+    case Key_Q
+    case Key_Command_1
+    case Key_Command_2
+    case Key_Command_3
+}
+
+protocol UserEventObserver {
+    func userEventSourceDidReceiveEvent(event: UserEvent)
+}
+
 class UserEventSource {
+    var observer: UserEventObserver?
 
     init() {
-        let window: NSWindow = NSApplication.sharedApplication().windows.first as! NSWindow
-
         NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
             println(event.keyCode)
 
-            //assert(false, "")
+            var userEvent: UserEvent?
 
-            // Q
-            if event.keyCode == 12 {
-                if window.alphaValue == 1 {
-                    window.alphaValue = 0.75
-                }
+            switch event.keyCode {
 
-                else if window.alphaValue == 0.75 {
-                    window.alphaValue = 0.5
-                }
+                case 123:
+                    if event.modifierFlags.isShiftKey() {
+                        userEvent = .Key_Shift_Left
+                    } else {
+                        userEvent = .Key_Left
+                    }
 
-                else if window.alphaValue == 0.5 {
-                    window.alphaValue = 0.25
-                }
+                case 124:
+                    if event.modifierFlags.isShiftKey() {
+                        userEvent = .Key_Shift_Right
+                    } else {
+                        userEvent = .Key_Right
+                    }
 
-                else {
-                    window.alphaValue = 1
-                }
+                case 125:
+                    if event.modifierFlags.isShiftKey() {
+                        userEvent = .Key_Shift_Down
+                    } else {
+                        userEvent = .Key_Down
+                    }
+
+                case 126:
+                    if event.modifierFlags.isShiftKey() {
+                        userEvent = .Key_Shift_Up
+                    } else {
+                        userEvent = .Key_Up
+                    }
+
+                case 12:
+                    userEvent = .Key_Q
+
+
+                // 1 - 2 - 3
+                case 18:
+                    if event.modifierFlags.isCommandKey() {
+                        println("modifier")
+                    }
+
+                case 19:
+                    if event.modifierFlags.isCommandKey() {
+                        println("modifier")
+                    }
+
+                case 20:
+                    if event.modifierFlags.isCommandKey() {
+                        println("modifier")
+                    }
+
+                // F3 (Temporary)
+                case 99:
+                    println("F3")
+                    NSApplication.sharedApplication().hide(nil)
+
+                default:
+                    ()
             }
 
-                // LEFT
-            else if event.keyCode == 123 {
-                var windowFrame: CGRect = window.frame
-
-                if event.modifierFlags.isShiftKey() {
-                    windowFrame.origin.x -= CGFloat(10)
-                } else {
-                    windowFrame.origin.x -= CGFloat(1)
-                }
-
-                window.setFrame(windowFrame, display: true)
+            if let recognizedEvent = userEvent {
+                self.observer?.userEventSourceDidReceiveEvent(recognizedEvent)
             }
 
-                // RIGHT
-            else if event.keyCode == 124 {
-                var windowFrame: CGRect = window.frame
-
-                if event.modifierFlags.isShiftKey() {
-                    windowFrame.origin.x += CGFloat(10)
-                } else {
-                    windowFrame.origin.x += CGFloat(1)
-                }
-
-                window.setFrame(windowFrame, display: true)
-            }
-
-                // DOWN
-            else if event.keyCode == 125 {
-                var windowFrame: CGRect = window.frame
-
-                if event.modifierFlags.isShiftKey() {
-                    windowFrame.origin.y -= CGFloat(10)
-                } else {
-                    windowFrame.origin.y -= CGFloat(1)
-                }
-
-                window.setFrame(windowFrame, display: true)
-            }
-
-                // UP
-            else if event.keyCode == 126 {
-                var windowFrame: CGRect = window.frame
-
-                if event.modifierFlags.isShiftKey() {
-                    windowFrame.origin.y += CGFloat(10)
-                } else {
-                    windowFrame.origin.y += CGFloat(1)
-                }
-
-                window.setFrame(windowFrame, display: true)
-            }
-
-                // F3
-            else if event.keyCode == 99 {
-                println("F3")
-                NSApplication.sharedApplication().hide(nil)
-            }
-
-                // 1
-            else if event.keyCode == 18 {
-                println("1 \(event)")
-
-                if event.modifierFlags.isCommandKey() {
-                    println("modifier")
-                }
-            }
-                
-                // 2
-            else if event.keyCode == 19 {
-                println("2 \(event)")
-            }
-                
-                // 3
-            else if event.keyCode == 20 {
-                println("3 \(event)")
-            }
-                
-            else {
-                println("olalala \(event)")
-            }
-            
             return event
         })
 

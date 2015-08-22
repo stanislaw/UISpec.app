@@ -26,6 +26,7 @@ class ImageView: NSImageView, NSDraggingDestination {
 
     var initialLocation: CGPoint!
 
+    // http://stackoverflow.com/questions/4563893/allow-click-and-dragging-a-view-to-drag-the-window-itself
     override func mouseDown(theEvent: NSEvent) {
         let windowFrame = window!.frame
 
@@ -55,20 +56,7 @@ class ImageView: NSImageView, NSDraggingDestination {
     }
 
     override func draggingEnded(sender: NSDraggingInfo?) {
-        println("draggingEnded")
-
-        println("self image \(image)")
-
-        println("self image \(image?.size)")
-        println("self image \(frame)")
-
         if let rep: AnyObject = image?.representations.first {
-            let concreteRep: NSImageRep = rep as! NSImageRep
-
-            println("real size \(concreteRep.size)")
-            println("real size \(concreteRep.pixelsHigh)")
-            println("real size \(concreteRep.pixelsWide)")
-
             delegate?.imageViewReceivedImage(self)
         }
     }

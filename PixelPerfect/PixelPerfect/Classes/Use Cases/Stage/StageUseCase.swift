@@ -45,6 +45,8 @@ public class StageUseCaseSetup {
 
         let stage = StageUseCase(windowController: windowController, viewController: viewController)
 
+        app.userEventSource.observer = stage
+
         app.stage = stage
     }
 
@@ -68,7 +70,7 @@ public class StageUseCaseSetup {
     }
 }
 
-public class StageUseCase {
+public class StageUseCase: UserEventObserver {
     public private(set) var viewController: StageViewController!
     public private(set) var windowController: NSWindowController!
 
@@ -87,9 +89,93 @@ public class StageUseCase {
         let windowWidth  = newImageDimensions.width
         let windowHeight = newImageDimensions.height
 
+        println("newImage dimensions \(newImageDimensions)")
+
         let windowX: CGFloat = window.frame.origin.x
         let windowY: CGFloat = window.frame.origin.y
 
         window.setFrame(CGRectMake(windowX, windowY, windowWidth, windowHeight), display: true)
+
+        println("new window frame \(window.frame)")
+    }
+
+    func userEventSourceDidReceiveEvent(event: UserEvent) {
+        switch event {
+
+            // LEFT
+            case .Key_Left:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.x -= CGFloat(1)
+                window.setFrame(windowFrame, display: true)
+
+            case .Key_Shift_Left:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.x -= CGFloat(10)
+                window.setFrame(windowFrame, display: true)
+
+            // RIGHT
+            case .Key_Right:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.x += CGFloat(1)
+                window.setFrame(windowFrame, display: true)
+
+            case .Key_Shift_Right:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.x += CGFloat(10)
+                window.setFrame(windowFrame, display: true)
+
+            // DOWN
+            case .Key_Down:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.y -= CGFloat(1)
+
+                window.setFrame(windowFrame, display: true)
+
+            case .Key_Shift_Down:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.y -= CGFloat(10)
+                window.setFrame(windowFrame, display: true)
+
+            // UP
+            case .Key_Up:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.y += CGFloat(1)
+
+                window.setFrame(windowFrame, display: true)
+
+            case .Key_Shift_Up:
+                var windowFrame: CGRect = window.frame
+
+                windowFrame.origin.y += CGFloat(10)
+                window.setFrame(windowFrame, display: true)
+
+            // Q
+            case .Key_Q:
+                if window.alphaValue == 1 {
+                    window.alphaValue = 0.75
+                }
+
+                else if window.alphaValue == 0.75 {
+                    window.alphaValue = 0.5
+                }
+
+                else if window.alphaValue == 0.5 {
+                    window.alphaValue = 0.25
+                }
+
+                else {
+                    window.alphaValue = 1
+            }
+
+            default:
+                ()
+        }
     }
 }

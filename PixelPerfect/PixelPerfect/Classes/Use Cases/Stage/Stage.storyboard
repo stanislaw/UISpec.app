@@ -651,7 +651,7 @@
             <objects>
                 <windowController storyboardIdentifier="StageWindowController" id="B8D-0N-5wS" sceneMemberID="viewController">
                     <window key="window" title="PixelPerfect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="StageWindow" customModule="PixelPerfect">
-                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES" resizable="YES"/>
+                        <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -673,12 +673,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-7u-H60" customClass="ImageView" customModule="PixelPerfect">
-                                <rect key="frame" x="0.0" y="0.0" width="420" height="270"/>
+                                <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" id="r5J-pS-MxT"/>
                             </imageView>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="Uum-7u-H60" firstAttribute="right" secondItem="m2S-Jp-Qdl" secondAttribute="right" constant="-60" id="YdF-0F-Wdk"/>
+                            <constraint firstItem="Uum-7u-H60" firstAttribute="right" secondItem="m2S-Jp-Qdl" secondAttribute="right" id="YdF-0F-Wdk"/>
                             <constraint firstItem="Uum-7u-H60" firstAttribute="bottom" secondItem="m2S-Jp-Qdl" secondAttribute="bottom" id="pZT-Ez-0on"/>
                             <constraint firstItem="Uum-7u-H60" firstAttribute="left" secondItem="m2S-Jp-Qdl" secondAttribute="left" id="teI-Ma-Hih"/>
                             <constraint firstItem="Uum-7u-H60" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" id="xUg-U4-VfX"/>
