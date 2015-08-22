@@ -36,12 +36,10 @@ public class StageUseCaseSetup {
 
         window.setFrame(windowFrame, display: true)
         window.movableByWindowBackground = true
+
         window.makeKeyAndOrderFront(nil)
-        window.makeMainWindow()
 
         windowController.showWindow(nil)
-
-        app.nsApp.activateIgnoringOtherApps(true)
 
         let stage = StageUseCase(windowController: windowController, viewController: viewController)
 
@@ -172,7 +170,20 @@ public class StageUseCase: UserEventObserver {
 
                 else {
                     window.alphaValue = 1
-            }
+                }
+
+            // ⌘ + "1", ⌘ + 2, ⌘ + 3
+            case .Key_Command_1: (
+
+            )
+
+            case .Key_Command_2: (
+
+            )
+
+            case .Key_Command_3: (
+
+            )
 
             default:
                 ()

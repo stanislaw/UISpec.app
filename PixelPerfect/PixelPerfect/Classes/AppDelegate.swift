@@ -11,12 +11,14 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-    func applicationWillFinishLaunching(notification: NSNotification) {
-        PP.setup(NSApp as! NSApplication)
-    }
+    func applicationWillFinishLaunching(notification: NSNotification) {}
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
         println("application did finish launching")
+
+        NSApp.activateIgnoringOtherApps(true)
+
+        PP.setup(NSApp as! NSApplication)
     }
 }
 

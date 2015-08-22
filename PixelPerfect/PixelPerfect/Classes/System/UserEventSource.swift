@@ -74,20 +74,20 @@ class UserEventSource {
                     userEvent = .Key_Q
 
 
-                // 1 - 2 - 3
+                // ⌘ + "1", ⌘ + 2, ⌘ + 3
                 case 18:
                     if event.modifierFlags.isCommandKey() {
-                        println("modifier")
+                        userEvent = .Key_Command_1
                     }
 
                 case 19:
                     if event.modifierFlags.isCommandKey() {
-                        println("modifier")
+                        userEvent = .Key_Command_2
                     }
 
                 case 20:
                     if event.modifierFlags.isCommandKey() {
-                        println("modifier")
+                        userEvent = .Key_Command_3
                     }
 
                 // F3 (Temporary)
