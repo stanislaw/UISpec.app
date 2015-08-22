@@ -27,7 +27,6 @@ class ImageView: NSImageView, NSDraggingDestination {
     var initialLocation: CGPoint!
 
     override func mouseDown(theEvent: NSEvent) {
-        println("mouseDown")
         let windowFrame = window!.frame
 
         initialLocation = NSEvent.mouseLocation()
@@ -37,7 +36,6 @@ class ImageView: NSImageView, NSDraggingDestination {
     }
 
     override func mouseDragged(theEvent: NSEvent) {
-        println("mouseDragged")
         var newOrigin = NSPoint()
 
         let screenFrame = NSScreen.mainScreen()!.frame
