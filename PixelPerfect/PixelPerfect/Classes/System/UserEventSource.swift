@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Carbon
 
 enum UserEvent {
     case Key_Up
@@ -115,6 +116,22 @@ class UserEventSource {
             return event
         })
 
+
+        // http://stackoverflow.com/questions/28281653/how-to-listen-to-global-hotkeys-with-swift-in-an-os-x-app
+        let keyCode = UInt16(kVK_F1)
+        let keyMask: NSEventModifierFlags = .CommandKeyMask
+
+        let options = NSDictionary(object: kCFBooleanTrue, forKey: kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString) as CFDictionaryRef
+
+        let trusted = AXIsProcessTrustedWithOptions(options)
+        if trusted != 0 {
+            NSEvent.addGlobalMonitorForEventsMatchingMask(.KeyDownMask, handler: { (event) -> Void in
+                if (event.keyCode == keyCode &&
+                    event.modifierFlags & keyMask == keyMask) {
+                    NSApp.activateIgnoringOtherApps(true)
+                }
+            })
+        }
     }
 }
 
