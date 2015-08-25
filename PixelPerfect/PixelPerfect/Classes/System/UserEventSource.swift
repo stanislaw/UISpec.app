@@ -116,7 +116,6 @@ class UserEventSource {
             return event
         })
 
-
         // http://stackoverflow.com/questions/28281653/how-to-listen-to-global-hotkeys-with-swift-in-an-os-x-app
         let keyCode = UInt16(kVK_F1)
         let keyMask: NSEventModifierFlags = .CommandKeyMask
@@ -128,10 +127,19 @@ class UserEventSource {
             NSEvent.addGlobalMonitorForEventsMatchingMask(.KeyDownMask, handler: { (event) -> Void in
                 if (event.keyCode == keyCode &&
                     event.modifierFlags & keyMask == keyMask) {
-                    NSApp.activateIgnoringOtherApps(true)
+                    App.currentRunningApplication.activateWithOptions(.ActivateAllWindows | .ActivateIgnoringOtherApps)
                 }
             })
         }
+
+        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
+            if (event.keyCode == keyCode &&
+                event.modifierFlags & keyMask == keyMask) {
+                App.currentRunningApplication.hide()
+            }
+
+            return event
+        })
     }
 }
 

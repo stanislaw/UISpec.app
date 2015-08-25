@@ -13,6 +13,7 @@ public let PP = App()
 public class App: NSObject {
 
     public private(set) var nsApp: NSApplication!
+    public static let currentRunningApplication = NSRunningApplication.currentApplication()
 
     public var stage: StageUseCase!
 
