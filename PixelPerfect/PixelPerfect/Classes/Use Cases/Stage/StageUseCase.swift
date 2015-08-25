@@ -177,6 +177,22 @@ public class StageUseCase: UserEventObserver {
             case .Key_Command_4:
                 window.setZoom(.Zoom_25)
 
+            // Alt + "1", Alt + 2, ..., Alt + 5
+            case .Key_Alt_1:
+                window.alphaValue = 1
+
+            case .Key_Alt_2:
+                window.alphaValue = 0.75
+
+            case .Key_Alt_3:
+                window.alphaValue = 0.5
+
+            case .Key_Alt_4:
+                window.alphaValue = 0.25
+
+            case .Key_Alt_5:
+                window.alphaValue = 0
+
             default:
                 ()
         }

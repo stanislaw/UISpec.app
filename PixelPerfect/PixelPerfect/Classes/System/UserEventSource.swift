@@ -30,6 +30,13 @@ enum UserEvent {
     case Key_Command_2
     case Key_Command_3
     case Key_Command_4
+
+    // Opacity: 100/75/50/25/0
+    case Key_Alt_1
+    case Key_Alt_2
+    case Key_Alt_3
+    case Key_Alt_4
+    case Key_Alt_5
 }
 
 protocol UserEventObserver {
@@ -85,9 +92,17 @@ class UserEventSource {
                         userEvent = .Key_Command_1
                     }
 
+                    else if event.modifierFlags.isAltKey() {
+                        userEvent = .Key_Alt_1
+                    }
+
                 case 19:
                     if event.modifierFlags.isCommandKey() {
                         userEvent = .Key_Command_2
+                    }
+
+                    else if event.modifierFlags.isAltKey() {
+                        userEvent = .Key_Alt_2
                     }
 
                 case 20:
@@ -95,9 +110,27 @@ class UserEventSource {
                         userEvent = .Key_Command_3
                     }
 
+                    else if event.modifierFlags.isAltKey() {
+                        userEvent = .Key_Alt_3
+                    }
+
+
                 case 21:
                     if event.modifierFlags.isCommandKey() {
                         userEvent = .Key_Command_4
+                    }
+
+                    else if event.modifierFlags.isAltKey() {
+                        userEvent = .Key_Alt_4
+                    }
+
+                case UInt16(kVK_ANSI_5):
+                    if event.modifierFlags.isCommandKey() {
+                        // ⌘ + "5" is not used
+                    }
+
+                    else if event.modifierFlags.isAltKey() {
+                        userEvent = .Key_Alt_5
                     }
 
                 // F3 (Temporary)
@@ -146,6 +179,10 @@ class UserEventSource {
 extension NSEventModifierFlags {
     func isCommandKey() -> Bool {
         return isSet(.CommandKeyMask)
+    }
+
+    func isAltKey() -> Bool {
+        return isSet(.AlternateKeyMask)
     }
 
     func isShiftKey() -> Bool {
