@@ -34,7 +34,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		86FA96CD1B9CD1AD007642D9 /* UISpec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UISpec.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		86FA96CD1B9CD1AD007642D9 /* UI Spec.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "UI Spec.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FA96DF1B9CD1AE007642D9 /* UISpecTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UISpecTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		86FA96E41B9CD1AE007642D9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		86FA96E51B9CD1AE007642D9 /* UISpecTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UISpecTests.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 		86FA96CE1B9CD1AD007642D9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				86FA96CD1B9CD1AD007642D9 /* UISpec.app */,
+				86FA96CD1B9CD1AD007642D9 /* UI Spec.app */,
 				86FA96DF1B9CD1AE007642D9 /* UISpecTests.xctest */,
 			);
 			name = Products;
@@ -185,7 +185,7 @@
 			);
 			name = UISpec;
 			productName = UISpec;
-			productReference = 86FA96CD1B9CD1AD007642D9 /* UISpec.app */;
+			productReference = 86FA96CD1B9CD1AD007642D9 /* UI Spec.app */;
 			productType = "com.apple.product-type.application";
 		};
 		86FA96DE1B9CD1AE007642D9 /* UISpecTests */ = {
@@ -387,7 +387,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/UISpec/Etc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = UISpec;
+				PRODUCT_NAME = "UI Spec";
 			};
 			name = Debug;
 		};
@@ -398,7 +399,8 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/UISpec/Etc/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_MODULE_NAME = UISpec;
+				PRODUCT_NAME = "UI Spec";
 			};
 			name = Release;
 		};
@@ -457,6 +459,7 @@
 				86FA96EB1B9CD1AE007642D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		86FA96EC1B9CD1AE007642D9 /* Build configuration list for PBXNativeTarget "UISpecTests" */ = {
 			isa = XCConfigurationList;
@@ -465,6 +468,7 @@
 				86FA96EE1B9CD1AE007642D9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
