@@ -641,7 +641,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="PixelPerfect" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="UISpec" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -650,7 +650,7 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController storyboardIdentifier="StageWindowController" id="B8D-0N-5wS" sceneMemberID="viewController">
-                    <window key="window" title="PixelPerfect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="StageWindow" customModule="PixelPerfect">
+                    <window key="window" title="PixelPerfect" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" restorable="NO" oneShot="NO" releasedWhenClosed="NO" showsToolbarButton="NO" animationBehavior="default" id="IQv-IB-iLA" customClass="StageWindow" customModule="UISpec">
                         <windowStyleMask key="styleMask" closable="YES" miniaturizable="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
@@ -667,12 +667,12 @@
         <!--Stage View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController storyboardIdentifier="StageViewController" id="XfG-lQ-9wD" customClass="StageViewController" customModule="PixelPerfect" sceneMemberID="viewController">
-                    <view key="view" id="m2S-Jp-Qdl" customClass="StageView" customModule="PixelPerfect">
+                <viewController storyboardIdentifier="StageViewController" id="XfG-lQ-9wD" customClass="StageViewController" customModule="UISpec" sceneMemberID="viewController">
+                    <view key="view" id="m2S-Jp-Qdl" customClass="StageView" customModule="UISpec">
                         <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-7u-H60" customClass="ImageView" customModule="PixelPerfect">
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Uum-7u-H60" customClass="ImageView" customModule="UISpec">
                                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                                 <imageCell key="cell" selectable="YES" editable="YES" alignment="left" imageScaling="proportionallyDown" id="r5J-pS-MxT"/>
                             </imageView>

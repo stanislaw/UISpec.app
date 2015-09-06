@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0630"
+   LastUpgradeVersion = "0640"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "86C319491B0A870B00DAF500"
-               BuildableName = "PixelPerfect.app"
-               BlueprintName = "PixelPerfect"
-               ReferencedContainer = "container:PixelPerfect.xcodeproj">
+               BlueprintIdentifier = "86FA96CC1B9CD1AD007642D9"
+               BuildableName = "UISpec.app"
+               BlueprintName = "UISpec"
+               ReferencedContainer = "container:UISpec.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -28,10 +28,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "86C3195B1B0A870B00DAF500"
-               BuildableName = "PixelPerfectTests.xctest"
-               BlueprintName = "PixelPerfectTests"
-               ReferencedContainer = "container:PixelPerfect.xcodeproj">
+               BlueprintIdentifier = "86FA96DE1B9CD1AE007642D9"
+               BuildableName = "UISpecTests.xctest"
+               BlueprintName = "UISpecTests"
+               ReferencedContainer = "container:UISpec.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -46,20 +46,20 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "86C3195B1B0A870B00DAF500"
-               BuildableName = "PixelPerfectTests.xctest"
-               BlueprintName = "PixelPerfectTests"
-               ReferencedContainer = "container:PixelPerfect.xcodeproj">
+               BlueprintIdentifier = "86FA96DE1B9CD1AE007642D9"
+               BuildableName = "UISpecTests.xctest"
+               BlueprintName = "UISpecTests"
+               ReferencedContainer = "container:UISpec.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "86C319491B0A870B00DAF500"
-            BuildableName = "PixelPerfect.app"
-            BlueprintName = "PixelPerfect"
-            ReferencedContainer = "container:PixelPerfect.xcodeproj">
+            BlueprintIdentifier = "86FA96CC1B9CD1AD007642D9"
+            BuildableName = "UISpec.app"
+            BlueprintName = "UISpec"
+            ReferencedContainer = "container:UISpec.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -76,10 +76,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "86C319491B0A870B00DAF500"
-            BuildableName = "PixelPerfect.app"
-            BlueprintName = "PixelPerfect"
-            ReferencedContainer = "container:PixelPerfect.xcodeproj">
+            BlueprintIdentifier = "86FA96CC1B9CD1AD007642D9"
+            BuildableName = "UISpec.app"
+            BlueprintName = "UISpec"
+            ReferencedContainer = "container:UISpec.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,10 +95,10 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "86C319491B0A870B00DAF500"
-            BuildableName = "PixelPerfect.app"
-            BlueprintName = "PixelPerfect"
-            ReferencedContainer = "container:PixelPerfect.xcodeproj">
+            BlueprintIdentifier = "86FA96CC1B9CD1AD007642D9"
+            BuildableName = "UISpec.app"
+            BlueprintName = "UISpec"
+            ReferencedContainer = "container:UISpec.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

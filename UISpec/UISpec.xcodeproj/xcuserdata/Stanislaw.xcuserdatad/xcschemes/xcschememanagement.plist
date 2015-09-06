@@ -4,7 +4,7 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>PixelPerfect.xcscheme</key>
+		<key>UISpec.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,12 +12,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>86C319491B0A870B00DAF500</key>
+		<key>86FA96CC1B9CD1AD007642D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86C3195B1B0A870B00DAF500</key>
+		<key>86FA96DE1B9CD1AE007642D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
