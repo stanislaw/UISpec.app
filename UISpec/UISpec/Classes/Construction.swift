@@ -12,7 +12,7 @@ class Construction {
     init() {}
 
     func stageStoryboard() -> NSStoryboard {
-        let stageStoryboard = NSStoryboard(name: "Stage", bundle: nil)!
+        let stageStoryboard = NSStoryboard(name: "Stage", bundle: nil)
 
         return stageStoryboard
     }

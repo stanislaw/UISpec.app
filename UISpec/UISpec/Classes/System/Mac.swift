@@ -12,10 +12,10 @@ class Mac: NSObject {
     var screenSize: CGSize {
         let mainScreen: NSScreen = NSScreen.mainScreen()!
 
-        println(mainScreen.deviceDescription)
+        print(mainScreen.deviceDescription)
 
         let screenSize: NSSize = mainScreen.deviceDescription[NSDeviceSize]!.sizeValue
-        println(screenSize)
+        print(screenSize)
 
         return screenSize
     }

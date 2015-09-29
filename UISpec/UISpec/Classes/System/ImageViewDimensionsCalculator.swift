@@ -13,9 +13,9 @@ class ImageViewDimensionsCalculator {
         if let rep: AnyObject = imageView.image?.representations.first {
             let concreteRep: NSImageRep = rep as! NSImageRep
 
-            println("real size \(concreteRep.size)")
-            println("real size \(concreteRep.pixelsHigh)")
-            println("real size \(concreteRep.pixelsWide)")
+            print("real size \(concreteRep.size)")
+            print("real size \(concreteRep.pixelsHigh)")
+            print("real size \(concreteRep.pixelsWide)")
 
             return CGSizeMake(CGFloat(concreteRep.pixelsWide), CGFloat(concreteRep.pixelsHigh))
         }

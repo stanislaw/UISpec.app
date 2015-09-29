@@ -47,8 +47,8 @@ class UserEventSource {
     var observer: UserEventObserver?
 
     init() {
-        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
-            println(event.keyCode)
+        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent? in
+            print(event.keyCode)
 
             var userEvent: UserEvent?
 
@@ -135,7 +135,7 @@ class UserEventSource {
 
                 // F3 (Temporary)
                 case 99:
-                    println("F3")
+                    print("F3")
                     NSApplication.sharedApplication().hide(nil)
 
                 default:
@@ -156,18 +156,18 @@ class UserEventSource {
         let options = NSDictionary(object: kCFBooleanTrue, forKey: kAXTrustedCheckOptionPrompt.takeUnretainedValue() as NSString) as CFDictionaryRef
 
         let trusted = AXIsProcessTrustedWithOptions(options)
-        if trusted != 0 {
+        if trusted {
             NSEvent.addGlobalMonitorForEventsMatchingMask(.KeyDownMask, handler: { (event) -> Void in
                 if (event.keyCode == keyCode &&
-                    event.modifierFlags & keyMask == keyMask) {
-                    App.currentRunningApplication.activateWithOptions(.ActivateAllWindows | .ActivateIgnoringOtherApps)
+                    event.modifierFlags.intersect(keyMask) == keyMask) {
+                    App.currentRunningApplication.activateWithOptions([.ActivateAllWindows, .ActivateIgnoringOtherApps])
                 }
             })
         }
 
-        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent in
+        NSEvent.addLocalMonitorForEventsMatchingMask(NSEventMask.KeyDownMask, handler: { (event) -> NSEvent? in
             if (event.keyCode == keyCode &&
-                event.modifierFlags & keyMask == keyMask) {
+                event.modifierFlags.intersect(keyMask) == keyMask) {
                 App.currentRunningApplication.hide()
             }
 
@@ -190,7 +190,7 @@ extension NSEventModifierFlags {
     }
 
     func isSet(bit: NSEventModifierFlags) -> Bool {
-        return self & bit == bit
+        return self.intersect(bit) == bit
     }
 
     func isNotSet(bit: NSEventModifierFlags) -> Bool {

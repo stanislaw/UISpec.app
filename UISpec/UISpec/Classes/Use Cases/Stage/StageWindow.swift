@@ -22,10 +22,10 @@ class StageWindow: NSWindow {
         super.init(coder: coder)
     }
 
-    override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, defer flag: Bool) {
+    override init(contentRect: NSRect, styleMask aStyle: Int, backing bufferingType: NSBackingStoreType, `defer` flag: Bool) {
         zoom = .Zoom_100
 
-        super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, defer: flag)
+        super.init(contentRect: contentRect, styleMask: aStyle, backing: bufferingType, `defer`: flag)
     }
 
     override func awakeFromNib() {
@@ -84,8 +84,6 @@ class StageWindow: NSWindow {
                     windowFrame.size.width  = currentImageDimensions.width * 0.25
                     windowFrame.size.height = currentImageDimensions.height * 0.25
                 }
-
-            default: ()
         }
 
         setFrame(windowFrame, display: true)

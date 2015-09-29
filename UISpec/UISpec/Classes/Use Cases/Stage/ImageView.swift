@@ -12,7 +12,7 @@ protocol ImageViewDelegate: class {
     func imageViewReceivedImage(imageView: ImageView)
 }
 
-class ImageView: NSImageView, NSDraggingDestination {
+class ImageView: NSImageView {
 
     weak var delegate: ImageViewDelegate?
 
@@ -39,9 +39,6 @@ class ImageView: NSImageView, NSDraggingDestination {
     override func mouseDragged(theEvent: NSEvent) {
         var newOrigin = NSPoint()
 
-        let screenFrame = NSScreen.mainScreen()!.frame
-        let windowFrame = window!.frame
-
         let currentLocation = NSEvent.mouseLocation()
 
         newOrigin.x = currentLocation.x - initialLocation.x;
@@ -51,7 +48,7 @@ class ImageView: NSImageView, NSDraggingDestination {
     }
 
     override func draggingEnded(sender: NSDraggingInfo?) {
-        if let rep: AnyObject = image?.representations.first {
+        if image?.representations.first != nil {
             delegate?.imageViewReceivedImage(self)
         }
     }

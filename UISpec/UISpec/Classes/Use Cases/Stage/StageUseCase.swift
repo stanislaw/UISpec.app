@@ -16,7 +16,6 @@ public class StageUseCaseSetup {
     }
 
     func execute() -> Void {
-        let stageStoryboard = app.construction.stageStoryboard()
         let windowController = app.construction.stageWindowController()
         let viewController = app.construction.stageViewController()
 
@@ -51,10 +50,6 @@ public class StageUseCaseSetup {
     func unexecute() {
         assert(app.nsApp != nil, "")
         assert(app.stage != nil, "")
-
-        let stage = app.stage
-
-        let nsApp = app.nsApp
 
         let windowController = app.stage.windowController
 
@@ -192,9 +187,6 @@ public class StageUseCase: UserEventObserver {
 
             case .Key_Alt_5:
                 window.alphaValue = 0
-
-            default:
-                ()
         }
     }
 }

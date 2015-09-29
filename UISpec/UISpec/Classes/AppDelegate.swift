@@ -14,10 +14,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationWillFinishLaunching(notification: NSNotification) {}
 
     func applicationDidFinishLaunching(aNotification: NSNotification) {
-        println("application did finish launching")
+        print("application did finish launching")
 
         NSApp.activateIgnoringOtherApps(true)
 
-        PP.setup(NSApp as! NSApplication)
+        PP.setup(NSApp as NSApplication)
     }
 }
